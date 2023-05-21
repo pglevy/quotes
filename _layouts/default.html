@@ -14,8 +14,18 @@
 </head>
 
 <body class="{% if page.body-style %}{{ page.body-style }}{% else %}p-3{% endif %}">
-  <main class="{% if page.main-style %}{{ page.main-style }}{% else %}container-md markdown-body{% endif %}">
-    {{ content }}
+  <main class="{% if page.main-style %}{{ page.main-style }}{% else %}container-md{% endif %}">
+    <h1 class="h1-mktg mb-4">My Favorite Quotes</h1>
+    {% for quote in site.quotes %}
+    <div class="pb-4 mb-4 border-bottom">
+      <blockquote class="f2-mktg mt-0 text-normal">{{ quote.content | markdownify }}</blockquote>
+      <p class="f4-mktg"><a href="{{ quote.url }}">—{{ quote.author }}, {{ quote.year }}</a></p>
+      <small>
+        {% for item in quote.tags %}
+        <span class="Label color-fg-muted">{{ item }}</span></small>
+        {% endfor %}
+    </div>
+    {% endfor %}
   </main>
   <script src="assets/js/main.js"></script>
 </body>

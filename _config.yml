@@ -9,3 +9,8 @@ lang: en
 
 # Avoid GitHub API authentication when building locally.
 github: [metadata]
+
+# Define collection for quotes
+collections:
+  quotes:
+    output: true
