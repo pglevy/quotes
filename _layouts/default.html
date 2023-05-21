@@ -19,11 +19,12 @@
     {% for quote in site.quotes %}
     <div class="pb-4 mb-4 border-bottom">
       <blockquote class="f2-mktg mt-0 text-normal">{{ quote.content | markdownify }}</blockquote>
-      <p class="f4-mktg"><a href="{{ quote.url }}">—{{ quote.author }}, {{ quote.year }}</a></p>
-      <small>
+      <div class="f4-mktg mb-2"><a href="{{ quote.url }}">—{{ quote.author }}, {{ quote.year }}</a></div>
+      <div>
         {% for item in quote.tags %}
-        <span class="Label color-fg-muted">{{ item }}</span></small>
+        <span class="Label f4-mktg color-fg-muted">{{ item }}</span>
         {% endfor %}
+      </div>
     </div>
     {% endfor %}
   </main>
